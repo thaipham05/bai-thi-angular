@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+<body>
+<div ng-app="costApp" ng-controller="costController">
+    <h1>Chào mừng bạn đến quán Coffee TP</h1>
+    <h2>1. Coffee Capuchino: Size M l,code:123:   20$</h2>
+    <h2>2. Coffee Đen Đá: Size M l, code: 456:   30$</h2>
+    <h2>3. Coffee Bạc Xỉu: Size M l, code: 789:   40$</h2>
+
+    <div> Size : <input type="number" min="0" ng-model="size" required></div>
+    <div> Code: <input type="number" min="0" ng-model="code" required></div>
+    <div>
+        <b>Total:</b>
+    </div>
+    <span>
+         {{total | currency: '$'}}
+     </span>
+    <button ng-click="pay()">Pay</button>
+</div>
+<script>
+    var app = angular.module('costApp',[]);
+    app.controller('costController', function ($scope)
+    {
+        $scope.size = 0;
+        $scope.code = 0;
+        $scope.total = 0;
+        $scope.pay = function() {
+            this.total = this.qty + this.cost
+
+    )};
+</script>
+
+
+
+
+</body>
+</html>
